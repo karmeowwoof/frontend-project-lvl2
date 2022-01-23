@@ -2,7 +2,6 @@
 [![Actions Status](https://github.com/karmeowwoof/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/karmeowwoof/frontend-project-lvl2/actions)
 ### eslint 
 [![Actions Status](https://github.com/karmeowwoof/frontend-project-lvl2/workflows/lint/badge.svg)](https://github.com/karmeowwoof/frontend-project-lvl2/actions)
-
 [![Maintainability](https://api.codeclimate.com/v1/badges/f7392646af35b63b7f0a/maintainability)](https://codeclimate.com/github/karmeowwoof/frontend-project-lvl2/maintainability)
 
 ### Difference generator
