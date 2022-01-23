@@ -1,0 +1,27 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Compares two configuration files and shows a difference.",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "-uwu"
+  },
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karmeowwoof/frontend-project-lvl2.git"
+  },
+  "author": "karmeowwoof",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karmeowwoof/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/karmeowwoof/frontend-project-lvl2#readme",
+  "dependencies": {
+    "commander": "^8.3.0",
+    "lodash": "^4.17.21"
+  }
+}
