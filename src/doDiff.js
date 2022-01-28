@@ -21,5 +21,4 @@ const doDiff = (data1, data2) => {
   const formatResult = `{\n${result.join('\n')}\n}`;
   return formatResult;
 };
-
 export default doDiff;
