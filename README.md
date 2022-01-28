@@ -3,6 +3,7 @@
 ### eslint 
 [![Actions Status](https://github.com/karmeowwoof/frontend-project-lvl2/workflows/lint/badge.svg)](https://github.com/karmeowwoof/frontend-project-lvl2/actions)
 ### codeclimate [![Maintainability](https://api.codeclimate.com/v1/badges/f7392646af35b63b7f0a/maintainability)](https://codeclimate.com/github/karmeowwoof/frontend-project-lvl2/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/f7392646af35b63b7f0a/test_coverage)](https://codeclimate.com/github/karmeowwoof/frontend-project-lvl2/test_coverage)
 
 ### Difference generator
 
