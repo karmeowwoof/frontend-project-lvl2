@@ -10,6 +10,7 @@
 
 Compares two configuration files(JSON or YML) and shows a difference.
 
+
 ### Example of comparing JSON files:
 [![asciicast](https://asciinema.org/a/b8GVyw7VpjwFyt0BwwWdwFiye.svg)](https://asciinema.org/a/b8GVyw7VpjwFyt0BwwWdwFiye)
 
