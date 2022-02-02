@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import parse from './parser.js';
 import doDiff from './doDiff.js';
+import doStylish from './__formatters__/stylish.js';
 
 const createObj = (filepath) => {
   const fullPath = path.resolve(process.cwd(), filepath);
@@ -15,7 +16,7 @@ const genDiff = (filepath1, filepath2) => {
   const data1 = createObj(filepath1);
   const data2 = createObj(filepath2);
   const diff = doDiff(data1, data2);
-  return diff;
+  return doStylish(diff);
 };
 
 export default genDiff;

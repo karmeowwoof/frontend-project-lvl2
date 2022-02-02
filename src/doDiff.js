@@ -1,24 +1,37 @@
 import _ from 'lodash';
 
-const doDiff = (data1, data2) => {
-  const allKeys = _.sortBy(_.uniq(Object.keys(data1).concat(Object.keys(data2))));
-  const result = allKeys.flatMap((key) => {
-    const value1 = data1[key];
-    const value2 = data2[key];
-    if (_.has(data1, key) && _.has(data2, key)) {
-      if (value1 === value2) {
-        return `    ${key}: ${value1}`;
-      }
+const doDiff = (object1, object2) => {
+  const unitedKeys = _.sortBy(_.union(Object.keys(object1), Object.keys(object2)));
+  return unitedKeys.map((key) => {
+    const value1 = object1[key];
+    const value2 = object2[key];
+
+    switch (true) {
+      case !_.has(object1, key):
+        return {
+          key, status: 'added', value: value2,
+        };
+
+      case !_.has(object2, key):
+        return {
+          key, status: 'removed', value: value1,
+        };
+
+      case _.isPlainObject(value1) && _.isPlainObject(value2):
+        return {
+          key, status: 'nested', children: doDiff(value1, value2),
+        };
+
+      case !_.isEqual(value1, value2):
+        return {
+          key, status: 'notEqual', value1, value2,
+        };
+      default:
+        return {
+          key, status: 'equal', value: value1,
+        };
     }
-    if (_.has(data1, key) && !_.has(data2, key)) {
-      return `  - ${key}: ${value1}`;
-    }
-    if (_.has(data2, key) && !_.has(data1, key)) {
-      return `  + ${key}: ${value2}`;
-    }
-    return [`  - ${key}: ${value1}`, `  + ${key}: ${value2}`];
   });
-  const formatResult = `{\n${result.join('\n')}\n}`;
-  return formatResult;
 };
+
 export default doDiff;
