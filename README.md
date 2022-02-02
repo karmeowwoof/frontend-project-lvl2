@@ -18,3 +18,6 @@ Compares two configuration files(JSON or YML) and shows a difference.
 
 ### Example of comparing nested JSON/YML files, 'stylish' format:
 [![asciicast](https://asciinema.org/a/OymcIkvCjKIuRk183mq16sSit.svg)](https://asciinema.org/a/OymcIkvCjKIuRk183mq16sSit)
+
+### Example of comparing nested JSON/YML files, 'plain' format:
+[![asciicast](https://asciinema.org/a/e441NMHRULXXCcMsg0JaJsJMW.svg)](https://asciinema.org/a/e441NMHRULXXCcMsg0JaJsJMW)

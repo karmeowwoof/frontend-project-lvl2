@@ -16,5 +16,7 @@ describe('check for correct diff', () => {
     expect(genDiff('file1.yml', 'file2.yml')).toEqual(readFile('expected_file.txt'));
     expect(genDiff('file3.json', 'file4.json')).toEqual(readFile('expected_file1.txt'));
     expect(genDiff('file3.yml', 'file4.yml')).toEqual(readFile('expected_file1.txt'));
+    expect(genDiff('file3.json', 'file4.json', 'plain')).toEqual(readFile('expected_file_plain.txt'));
+    expect(genDiff('file3.yml', 'file4.yml', 'plain')).toEqual(readFile('expected_file_plain.txt'));
   });
 });
