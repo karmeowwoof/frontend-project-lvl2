@@ -7,7 +7,7 @@ const parse = (data, fileExt) => {
   if (fileExt === 'yaml' || fileExt === 'yml') {
     return yaml.load(data);
   }
-  return undefined;
+  throw new Error(`Format is not supported: ${fileExt}`);
 };
 
 export default parse;

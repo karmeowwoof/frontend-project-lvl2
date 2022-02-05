@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import parse from './parser.js';
 import doDiff from './doDiff.js';
-import format from './__formatters__/index.js';
+import format from './formatters/index.js';
 
 const createObj = (filepath) => {
   const fullPath = path.resolve(process.cwd(), filepath);
