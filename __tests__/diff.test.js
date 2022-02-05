@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
 import {
-  describe, expect, beforeEach, test,
+  describe, expect, test,
 } from '@jest/globals';
 import genDiff from '../src/index.js';
 
@@ -12,13 +12,9 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-const expects = [];
-
-beforeEach(() => {
-  expects.push(readFile('expected_stylish.txt'));
-  expects.push(readFile('expected_plain.txt'));
-  expects.push(readFile('expected_json.txt'));
-});
+const expects = [readFile('expected_stylish.txt'),
+  readFile('expected_plain.txt'),
+  readFile('expected_json.txt')];
 
 const extensions = ['json', 'yml'];
 
