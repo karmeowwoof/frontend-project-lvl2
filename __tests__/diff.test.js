@@ -12,6 +12,9 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
+// При использовании let проект не проходит тесты хекслета:
+// "error  Unallowed use of `let`. Use `const` instead  fp/no-let"
+
 const expects = [readFile('expected_stylish.txt'),
   readFile('expected_plain.txt'),
   readFile('expected_json.txt')];
