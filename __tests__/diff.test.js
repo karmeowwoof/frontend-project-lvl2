@@ -12,12 +12,9 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-// При использовании let проект не проходит тесты хекслета:
-// "error  Unallowed use of `let`. Use `const` instead  fp/no-let"
-
-const expects = [readFile('expected_stylish.txt'),
-  readFile('expected_plain.txt'),
-  readFile('expected_json.txt')];
+const stylish = readFile('expected_stylish.txt');
+const plain = readFile('expected_plain.txt');
+const json = readFile('expected_json.txt');
 
 const extensions = ['json', 'yml'];
 
@@ -25,9 +22,9 @@ describe('Check generate diff. Formatters: stylish, plain, json', () => {
   test.each(extensions)('comparison file format: %p', (extension) => {
     const firstFile = getFixturePath(`file1.${extension}`);
     const secondFile = getFixturePath(`file2.${extension}`);
-    expect(genDiff(firstFile, secondFile)).toEqual(expects[0]);
-    expect(genDiff(firstFile, secondFile, 'stylish')).toEqual(expects[0]);
-    expect(genDiff(firstFile, secondFile, 'plain')).toEqual(expects[1]);
-    expect(genDiff(firstFile, secondFile, 'json')).toEqual(expects[2]);
+    expect(genDiff(firstFile, secondFile)).toEqual(stylish);
+    expect(genDiff(firstFile, secondFile, 'stylish')).toEqual(stylish);
+    expect(genDiff(firstFile, secondFile, 'plain')).toEqual(plain);
+    expect(genDiff(firstFile, secondFile, 'json')).toEqual(json);
   });
 });
